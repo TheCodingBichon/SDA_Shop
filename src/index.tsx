@@ -1,24 +1,28 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { Provider } from "react-redux";
-import { store } from "./app/store";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import "./index.css";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import './index.css';
 import { initializeApp } from "firebase/app";
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDdurVyR73HxmCmzYbBMdlc9XDjYQ2EDKc",
-  authDomain: "sda-shop-e0111.firebaseapp.com",
-  projectId: "sda-shop-e0111",
-  storageBucket: "sda-shop-e0111.appspot.com",
-  messagingSenderId: "606965226876",
-  appId: "1:606965226876:web:69d619289bb4012d3f18f9",
+  apiKey: "AIzaSyBCtEIRZVzG4DwlE6pxFRQbRdVTNaYbtgg",
+  authDomain: "zdfronpol18-sdanews-3f22a.firebaseapp.com",
+  projectId: "zdfronpol18-sdanews-3f22a",
+  storageBucket: "zdfronpol18-sdanews-3f22a.appspot.com",
+  messagingSenderId: "78839870204",
+  appId: "1:78839870204:web:8b49aca9f2cf76e6b75d79"
 };
 
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app)
+export const firestore = getFirestore(app)
 
-const container = document.getElementById("root")!;
+const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
